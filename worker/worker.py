@@ -34,7 +34,8 @@ if __name__ == '__main__':
                             Message=encoded,
                             MessageStructure='json'
                         )
-                        appendlog(f, '{0}: {1}'.format(tweet['sentiment'], tweet['text']))
+                        # Add tweet sentiiment, text and reponse message of publish to log file
+                        appendlog(f, '{0}: {1}'.format(tweet['sentiment'], tweet['text'],response['MessageId']))
                     else:
                         appendlog(f, 'Analysis failed: {0}'.format(tweet['text']))
                     #message.delete()
