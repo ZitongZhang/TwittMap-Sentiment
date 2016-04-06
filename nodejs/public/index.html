@@ -127,12 +127,9 @@
 <script>
     var socket = io.connect('http://localhost');
 
-    socket.on('news', function (data) {
-    });
-
     $('#button1').click(function () {
         var keyword = $('#combo').find(':selected').text();
-        socket.emit('my other event', {key: keyword});
+        socket.emit('clicked', {key: keyword});
 
         socket.on('toggle', function (newdata) {    //of the client in this case.
             var tweets = newdata.tweet;

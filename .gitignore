@@ -1,6 +1,7 @@
 streaming/tokens.py
 streaming/streaming.log
 worker/api_key.txt
+worker/tokens.py
 worker/worker.log
 nodejs/node_modules
 

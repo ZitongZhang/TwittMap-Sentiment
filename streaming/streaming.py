@@ -27,9 +27,7 @@ class TwittMapListener(tweepy.StreamListener):
             if decoded.get('lang') == 'en' and decoded.get('coordinates') is not None:
                 geo = decoded['coordinates']['coordinates']
                 timestamp = parser.parse(decoded['created_at']).strftime('%Y-%m-%dT%H:%M:%SZ')
-                tweet_id = decoded['id_str']
                 tweet = {
-                    'id': tweet_id,
                     'user': decoded['user']['screen_name'],
                     'text': decoded['text'],
                     'geo': geo,
