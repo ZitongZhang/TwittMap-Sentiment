@@ -55,15 +55,27 @@
             var text = twitter.text;
             var sentiment = twitter.sentiment;
             var icons = {
-              positive: {
-                icon: 'http://emojipedia-us.s3.amazonaws.com/cache/bb/83/bb83b1a98ed63ce774f83c6f511f75e8.png'
-              },
-              neutral: {
-                icon: 'http://emojipedia-us.s3.amazonaws.com/cache/39/0e/390ec41f52a1a989e95dd2b55d4296db.png'
-              },
-              negative: {
-                icon: 'http://emojipedia-us.s3.amazonaws.com/cache/ee/4e/ee4e7bead11d7bc6e8f79a21a7039f0d.png'
-              }
+                positive: new google.maps.MarkerImage (
+                    'http://emojipedia-us.s3.amazonaws.com/cache/66/29/66298a09196951d6dcd1109a4ae7ff3f.png',
+                    null,
+                    null,
+                    null,
+                    new google.maps.Size(30, 30)
+                ),
+                neutral: new google.maps.MarkerImage (
+                    'http://emojipedia-us.s3.amazonaws.com/cache/39/0e/390ec41f52a1a989e95dd2b55d4296db.png',
+                    null,
+                    null,
+                    null,
+                    new google.maps.Size(30, 30)
+                ),
+                negative: new google.maps.MarkerImage (
+                    'http://emojipedia-us.s3.amazonaws.com/cache/63/d2/63d239de4b9480e8f6ba75046687d92e.png',
+                    null,
+                    null,
+                    null,
+                    new google.maps.Size(30, 30)
+                )
             };
             var marker = new google.maps.Marker({
                 position: latLng,
