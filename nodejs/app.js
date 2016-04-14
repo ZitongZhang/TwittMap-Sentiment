@@ -35,6 +35,9 @@ app.post('/', function (req, res) {
             id: id,
             body: message
         });
+        io.emit('newcoming', {
+            tweet: JSON.parse(message)
+        });
     }
 });
 
@@ -52,10 +55,9 @@ io.on('connection', function (socket) {
             for (var i = 0; i < hits.length; i++) {
                 result[i] = hits[i]._source;
             }
-            var myObject = {
-                "tweet": result
-            };
-            socket.emit('toggle', myObject);
+            socket.emit('toggle', {
+                tweet: result
+            });
         });
     });
 });
