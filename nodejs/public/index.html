@@ -114,10 +114,10 @@
         }
     });
     socket.on('newcoming', function (data) {
-        var keyword = $('#combo').find(':selected').text();
         var tweet = data.tweet;
-        if (tweet.text.search(new RegExp(keyword, 'i')) != -1)
-            addMarker(tweet, true);
+        // Ideally, tweet should only be added if it matches the current selected item in the combobox
+        // However, in order to see it more frequently, we choose to always add it
+        addMarker(tweet, true);
     });
 
 </script>
